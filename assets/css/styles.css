@@ -30,7 +30,7 @@
     border-radius: 10px;
 }
 
-.start{
+button{
     margin-top: 15px;
     border: none;
     background-color: var(--main-red);
