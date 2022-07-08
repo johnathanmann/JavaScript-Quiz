@@ -1,9 +1,9 @@
 
-var questions = [
+const questions = [
     {
-        questionText: "Questions",
-        choices: ["Choice", "Choice", "Choice", "Choice"],
-        answer: "Answer",
+        questionText: "What method writes a message into the console?",
+        choices: ["console.log()", "function()", "array()", "message()"],
+        answer: "console.log()",
     },
     {
         questionText: "Questions2",

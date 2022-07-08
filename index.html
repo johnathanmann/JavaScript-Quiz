@@ -14,14 +14,33 @@
 </head>
 <body>
     <div class="container">
+        <!-- Display time and link to scores.html -->
     <div id="top-page">
     <a href="./scores.html" target="_blank">High Scores</a><p>Time: 0</p>
     </div>
+    <section>
+        <!-- Introduction to the quiz -->
         <div id="introduction">
             <header><h1>JavaScript Quiz</h1></header>
             <p>Answer the following JavaScript question and see how well you do! Incorrect answers will take time off your timer.<br></p>
+        <!-- Quiz start button -->
             <button id="start"> Start Quiz</button>
         </div>
+    </section>
+    <section>
+        <!-- The following line will display depending weather or not the question is answered correctly -->
+        <h1 id="correctAnswer">Correct</h1>
+        <h1 id="incorrectAnswer">Incorrect</h1>
+        <!-- The following are all of the questions. They will come and go as logic.js tells them to. -->
+        <div id="question1">
+            <h2 id="">What method writes a message into the console?</h2>
+            <button id="correct">console.log()</button><br>
+            <button id="inCorrect">array()</button><br>
+            <button id="inCorrect">function()</button><br>
+            <button id="inCorrect">message()</button><br>
+        </div>
+    </section>
+
     </div>
     <script src="./assets/js/logic.js"></script>
 </body>

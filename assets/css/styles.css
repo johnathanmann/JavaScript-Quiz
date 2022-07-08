@@ -5,6 +5,10 @@
     --main-red: #a91818;
 }
 
+#question, #correctAnswer, #incorrectAnswer{
+    display: none;
+}
+
 #top-page a, p{
     text-decoration: none;
     display: inline;
@@ -36,5 +40,20 @@ button{
     background-color: var(--main-red);
     color: #FFF;
     padding: 5px;
+    border-radius: 10px;
+}
+
+#question1{
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px solid var(--main-red);
+    left: 50%;
+    padding: 15px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     border-radius: 10px;
 }
