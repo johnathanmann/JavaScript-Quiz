@@ -5,10 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Quiz</title>
-    <link rel="stylesheet" type="css/text" src="./assets/css/styles.css">
+    <!-- Import Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+    <!-- Local stylesheet -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
 </head>
 <body>
-    <a href="./scores.html" target="_blank">High Scores</a>
+    <div class="container">
+    <div id="top-page">
+    <a href="./scores.html" target="_blank">High Scores</a><p>Time: 0</p>
+    </div>
+        <div id="introduction">
+            <header><h1>JavaScript Quiz</h1></header>
+            <p>Answer the following JavaScript question and see how well you do! Incorrect answers will take time off your timer.<br></p>
+            <button class="start"> Start Quiz</button>
+        </div>
+    </div>
     <script src="./assets/js/logic.js"></script>
 </body>
 </html>

@@ -1,0 +1,40 @@
+*{
+    font-family: 'Roboto Mono', monospace;
+    margin: 0px;
+    padding: 0px;
+    --main-red: #a91818;
+}
+
+#top-page a, p{
+    text-decoration: none;
+    display: inline;
+    color: #000;
+}
+
+#top-page p{
+    float: right;
+}
+
+#introduction{
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px solid var(--main-red);
+    left: 50%;
+    padding: 15px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 10px;
+}
+
+.start{
+    margin-top: 15px;
+    border: none;
+    background-color: var(--main-red);
+    color: #FFF;
+    padding: 5px;
+    border-radius: 10px;
+}
