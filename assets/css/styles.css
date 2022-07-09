@@ -10,10 +10,6 @@
     display: none;
 }
 
-/* Keeps items hidden until their are needed */
-.visible{
-    display: block;
-}
 
 /* Keeps the following from briefly appearing on load */
 #question, #correctAnswer, #incorrectAnswer{

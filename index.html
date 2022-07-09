@@ -47,9 +47,15 @@
             <button onclick="correctButton()">console.log()</button><br>
             <button onclick="incorrectButton()">number</button><br>
             <!-- The following will display depending on weather or not the correct answer is chosen -->
-            <h2 class="correctAnswer">Correct</h2>
-            <h2 class="incorrectAnswer">Incorrect</h2>
-            <p class="continue">Continue</p>
+            <div class="hidden hiddenCorrect">
+                <h2>Correct</h2>
+                <p class="continue">Continue</p>
+            </div>
+            <div class="hidden hiddenIncorrect">
+                <h2>Incorrect</h2>
+                <p class="continue">Continue</p>
+            </div>
+            
         </div>
     </section>
 
