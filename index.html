@@ -30,14 +30,14 @@
     <section id="questions">
         <!-- The following are all of the questions. They will come and go as logic.js tells them to. -->
         <div id="question1">
-            <h2>What method writes a message into the console?</h2>
+            <h2>1. What method writes a message into the console?</h2>
             <button onclick="displayQuestionCorrect2()">console.log()</button><br>
             <button onclick="displayQuestionIncorrect2()">array()</button><br>
             <button onclick="displayQuestionIncorrect2()">function()</button><br>
             <button onclick="displayQuestionIncorrect2()">message()</button><br>
         </div>
         <div id="question2">
-            <h2>Which is a not a JavaScript data type?</h2>
+            <h2>2. Which is a not a JavaScript data type?</h2>
             <button onclick="displayQuestionIncorrect3()">boolean</button><br>
             <button onclick="displayQuestionIncorrect3()">string</button><br>
             <button onclick="displayQuestionCorrect3()">console.log()</button><br>
@@ -52,11 +52,26 @@
             
         </div>
         <div id="question3">
-            <h2>How do you link your JS file to an HTML file?</h2>
-            <button onclick="incorrectButton()">&lt;link&gt;</button><br>
-            <button onclick="correctButton()">&lt;script&gt;</button><br>
-            <button onclick="incorrectButton()">&lt;a&gt;</button><br>
-            <button onclick="incorrectButton()">&lt;button&gt;</button><br>
+            <h2>3. How do you link your JS file to an HTML file?</h2>
+            <button onclick="displayQuestionIncorrect4()">&lt;link&gt;</button><br>
+            <button onclick="displayQuestionCorrect4()">&lt;script&gt;</button><br>
+            <button onclick="displayQuestionIncorrect4()">&lt;a&gt;</button><br>
+            <button onclick="displayQuestionIncorrect4()">&lt;button&gt;</button><br>
+            <!-- The following will display depending on weather or not the correct answer is chosen -->
+            <div id="hiddenCorrect3" class="hidden">
+                <p>Question 3: Correct</p>
+            </div>
+            <div id="hiddenIncorrect3" class="hidden">
+                <h2>Question 3: Incorrect</h2>
+            </div>
+            
+        </div>
+        <div id="question4">
+            <h2>4. How would you call a function called firstFunction?</h2>
+            <button onclick="incorrectButton()">run firstFunction</button><br>
+            <button onclick="correctButton()">call firstFunction()</button><br>
+            <button onclick="incorrectButton()">display firstFunction</button><br>
+            <button onclick="incorrectButton()">firstFunction()</button><br>
             <!-- The following will display depending on weather or not the correct answer is chosen -->
             <div id="hiddenCorrect2" class="hidden">
                 <p>Question 2: Correct</p>
