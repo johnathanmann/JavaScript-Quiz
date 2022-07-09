@@ -27,17 +27,29 @@
             <button id="start"> Start Quiz</button>
         </div>
     </section>
-    <section>
-        <!-- The following line will display depending weather or not the question is answered correctly -->
-        <h1 id="correctAnswer">Correct</h1>
-        <h1 id="incorrectAnswer">Incorrect</h1>
+    <section id="questions">
         <!-- The following are all of the questions. They will come and go as logic.js tells them to. -->
         <div id="question1">
-            <h2 id="">What method writes a message into the console?</h2>
-            <button id="correct">console.log()</button><br>
-            <button id="inCorrect">array()</button><br>
-            <button id="inCorrect">function()</button><br>
-            <button id="inCorrect">message()</button><br>
+            <h2>What method writes a message into the console?</h2>
+            <button onclick="correctButton()">console.log()</button><br>
+            <button onclick="incorrectButton()">array()</button><br>
+            <button onclick="incorrectButton()">function()</button><br>
+            <button onclick="incorrectButton()">message()</button><br>
+            <!-- The following will display depending on weather or not the correct answer is chosen -->
+            <h2 class="correctAnswer">Correct</h2>
+            <h2 class="incorrectAnswer">Incorrect</h2>
+            <p onclick="displayQuestion2()" class="continue">Continue</p>
+        </div>
+        <div id="question2">
+            <h2>Which is a not a data type?</h2>
+            <button onclick="incorrectButton()">boolean</button><br>
+            <button onclick="incorrectButton()">string</button><br>
+            <button onclick="correctButton()">console.log()</button><br>
+            <button onclick="incorrectButton()">number</button><br>
+            <!-- The following will display depending on weather or not the correct answer is chosen -->
+            <h2 class="correctAnswer">Correct</h2>
+            <h2 class="incorrectAnswer">Incorrect</h2>
+            <p class="continue">Continue</p>
         </div>
     </section>
 

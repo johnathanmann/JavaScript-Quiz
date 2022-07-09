@@ -5,6 +5,17 @@
     --main-red: #a91818;
 }
 
+/* Keeps items hidden until their are needed */
+.hidden{
+    display: none;
+}
+
+/* Keeps items hidden until their are needed */
+.visible{
+    display: block;
+}
+
+/* Keeps the following from briefly appearing on load */
 #question, #correctAnswer, #incorrectAnswer{
     display: none;
 }
@@ -43,7 +54,7 @@ button{
     border-radius: 10px;
 }
 
-#question1{
+#question1, #question2{
     flex-wrap: wrap;
     align-items: center;
     border: 1px solid var(--main-red);
@@ -55,5 +66,10 @@ button{
     transform: translate(-50%, -50%); 
     font-weight: bold;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 10px;
+}
+
+.continue{
+    border: 1px solid var(--main-red);
     border-radius: 10px;
 }
