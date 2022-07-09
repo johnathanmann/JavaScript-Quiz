@@ -18,8 +18,9 @@
 
 #top-page a, p{
     text-decoration: none;
-    display: inline;
+    display: inline-block;
     color: #000;
+    padding: 10px 15px;
 }
 
 #top-page p{
@@ -68,4 +69,5 @@ button{
 .continue{
     border: 1px solid var(--main-red);
     border-radius: 10px;
+    padding: 5px;
 }
