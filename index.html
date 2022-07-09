@@ -31,29 +31,38 @@
         <!-- The following are all of the questions. They will come and go as logic.js tells them to. -->
         <div id="question1">
             <h2>What method writes a message into the console?</h2>
-            <button onclick="correctButton()">console.log()</button><br>
-            <button onclick="incorrectButton()">array()</button><br>
-            <button onclick="incorrectButton()">function()</button><br>
-            <button onclick="incorrectButton()">message()</button><br>
-            <!-- The following will display depending on weather or not the correct answer is chosen -->
-            <h2 class="correctAnswer">Correct</h2>
-            <h2 class="incorrectAnswer">Incorrect</h2>
-            <p onclick="displayQuestion2()" class="continue">Continue</p>
+            <button onclick="displayQuestionCorrect2()">console.log()</button><br>
+            <button onclick="displayQuestionIncorrect2()">array()</button><br>
+            <button onclick="displayQuestionIncorrect2()">function()</button><br>
+            <button onclick="displayQuestionIncorrect2()">message()</button><br>
         </div>
         <div id="question2">
             <h2>Which is a not a JavaScript data type?</h2>
-            <button onclick="incorrectButton()">boolean</button><br>
-            <button onclick="incorrectButton()">string</button><br>
-            <button onclick="correctButton()">console.log()</button><br>
-            <button onclick="incorrectButton()">number</button><br>
+            <button onclick="displayQuestionIncorrect3()">boolean</button><br>
+            <button onclick="displayQuestionIncorrect3()">string</button><br>
+            <button onclick="displayQuestionCorrect3()">console.log()</button><br>
+            <button onclick="displayQuestionIncorrect3()">number</button><br>
             <!-- The following will display depending on weather or not the correct answer is chosen -->
-            <div class="hidden hiddenCorrect">
-                <h2>Correct</h2>
-                <p class="continue">Continue</p>
+            <div id="hiddenCorrect1" class="hidden">
+                <p>Question 1: Correct</p>
             </div>
-            <div class="hidden hiddenIncorrect">
-                <h2>Incorrect</h2>
-                <p class="continue">Continue</p>
+            <div id="hiddenIncorrect1" class="hidden">
+                <h2>Question 1: Incorrect</h2>
+            </div>
+            
+        </div>
+        <div id="question3">
+            <h2>How do you link your JS file to an HTML file?</h2>
+            <button onclick="incorrectButton()">&lt;link&gt;</button><br>
+            <button onclick="correctButton()">&lt;script&gt;</button><br>
+            <button onclick="incorrectButton()">&lt;a&gt;</button><br>
+            <button onclick="incorrectButton()">&lt;button&gt;</button><br>
+            <!-- The following will display depending on weather or not the correct answer is chosen -->
+            <div id="hiddenCorrect2" class="hidden">
+                <p>Question 2: Correct</p>
+            </div>
+            <div id="hiddenIncorrect2" class="hidden">
+                <h2>Question 2: Incorrect</h2>
             </div>
             
         </div>

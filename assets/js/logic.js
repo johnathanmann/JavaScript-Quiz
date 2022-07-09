@@ -2,21 +2,23 @@ console.log(window);
 // Pertinent variables
 const startGame = document.querySelector('#start');
 const questions = document.querySelector('#questions');
-const correctAnswer = document.querySelector('.correctAnswer');
-const incorrectAnswer = document.querySelector('.incorrectAnswer');
 const nextQuestion = document.querySelector('.continue');
-const hiddenCorrect = document.querySelector('.hiddenCorrect');
-const hiddenIncorrect = document.querySelector('.hiddenIncorrect');
 var score = 0;
-// Var's for each question
+// Const's for each question and their answers
 const question1 = document.querySelector('#question1');
 const question2 = document.querySelector('#question2');
-const hidden1 = document.getElementById('hidden1');
+const hiddenCorrect1 = document.querySelector('#hiddenCorrect1');
+const hiddenIncorrect1 = document.querySelector('#hiddenIncorrect1');
+const question3 = document.querySelector('#question3');
+const hiddenCorrect2 = document.querySelector('#hiddenCorrect2');
+const hiddenIncorrect2 = document.querySelector('#hiddenIncorrect2');
+// const hiddenCorrect3 = document.querySelector('#hiddenCorrect3');
+// const hiddenIncorrect3 = document.querySelector('#hiddenIncorrect3');
 
 function init(){
   question1.style.display="none";
-  nextQuestion.style.display="none";
   question2.style.display="none";
+  question3.style.display="none";
 }
 
 init();
@@ -24,33 +26,34 @@ init();
 startGame.addEventListener("click", function() {
     document.getElementById('introduction').style.display="none";
     question1.style.display="block";
-    correctAnswer.style.display="none";
-    incorrectAnswer.style.display="none";
-    nextQuestion.style.display="none";
   });
 
-
-var correctButton = function(){
-    score = score + 10;
-    console.log(score);
-    correctAnswer.style.display="block";
-    nextQuestion.style.display="inline";
-    hiddenCorrect.classList.remove('hidden');
-};
-
-var incorrectButton = function(){
-  incorrectAnswer.style.display="block";
-  nextQuestion.style.display="inline";
-  nextQuestion.style.display="inline";
-  hiddenIncorrect.classList.remove('hidden');
-};
-
-var displayQuestion2 = function (){
-  hiddenCorrect.classList.add('hidden');
-  hiddenIncorrect.classList.add('hidden');
+var displayQuestionCorrect2 = function (){
+  hiddenCorrect1.classList.remove('hidden');
+  hiddenIncorrect1.classList.add('hidden');
   question1.style.display="none";
   question2.style.display="block";
-  incorrectAnswer.style.display="none";
+}
+
+var displayQuestionIncorrect2 = function (){
+  hiddenCorrect1.classList.add('hidden');
+  hiddenIncorrect1.classList.remove('hidden');
+  question1.style.display="none";
+  question2.style.display="block";
+}
+
+var displayQuestionCorrect3 = function (){
+  hiddenCorrect2.classList.remove('hidden');
+  hiddenIncorrect2.classList.add('hidden');
+  question2.style.display="none";
+  question3.style.display="block";
+}
+
+var displayQuestionIncorrect3 = function (){
+  hiddenCorrect2.classList.add('hidden');
+  hiddenIncorrect2.classList.remove('hidden');
+  question2.style.display="none";
+  question3.style.display="block";
 }
 
 
