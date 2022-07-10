@@ -55,7 +55,7 @@ button{
     border-radius: 10px;
 }
 
-#question1, #question2, #question3, #question4{
+#question1, #question2, #question3, #question4, #question5{
     flex-wrap: wrap;
     align-items: center;
     left: 50%;
@@ -65,8 +65,4 @@ button{
     top: 50%;
     transform: translate(-50%, -50%); 
     font-weight: bold;
-}
-
-#question1 p, #question2 p, #question3 p, #question4 p{
-    padding: 0px,
 }

@@ -16,7 +16,7 @@
     <div class="container">
         <!-- Display time and link to scores.html -->
     <div id="top-page">
-    <a href="./scores.html" target="_blank">High Scores</a><p>Time: 0</p>
+    <a href="./scores.html" target="_blank">High Scores</a><p>Time: <span id="countdown"></span></p>
     </div>
     <section>
         <!-- Introduction to the quiz -->
@@ -58,21 +58,6 @@
             <button onclick="displayQuestionIncorrect4()">&lt;a&gt;</button><br>
             <button onclick="displayQuestionIncorrect4()">&lt;button&gt;</button><br>
             <!-- The following will display depending on weather or not the correct answer is chosen -->
-            <div id="hiddenCorrect3" class="hidden">
-                <p>Question 3: Correct</p>
-            </div>
-            <div id="hiddenIncorrect3" class="hidden">
-                <h2>Question 3: Incorrect</h2>
-            </div>
-            
-        </div>
-        <div id="question4">
-            <h2>4. How would you call a function called firstFunction?</h2>
-            <button onclick="incorrectButton()">run firstFunction</button><br>
-            <button onclick="correctButton()">call firstFunction()</button><br>
-            <button onclick="incorrectButton()">display firstFunction</button><br>
-            <button onclick="incorrectButton()">firstFunction()</button><br>
-            <!-- The following will display depending on weather or not the correct answer is chosen -->
             <div id="hiddenCorrect2" class="hidden">
                 <p>Question 2: Correct</p>
             </div>
@@ -80,6 +65,34 @@
                 <h2>Question 2: Incorrect</h2>
             </div>
             
+        </div>
+        <div id="question4">
+            <h2>4. How would you call a function called firstFunction?</h2>
+            <button onclick="displayQuestionIncorrect5()">run firstFunction</button><br>
+            <button onclick="displayQuestionIncorrect5()">call firstFunction()</button><br>
+            <button onclick="displayQuestionIncorrect5()">display firstFunction</button><br>
+            <button onclick="displayQuestionCorrect5()">firstFunction()</button><br>
+            <!-- The following will display depending on weather or not the correct answer is chosen -->
+            <div id="hiddenCorrect3" class="hidden">
+                <p>Question 3: Correct</p>
+            </div>
+            <div id="hiddenIncorrect3" class="hidden">
+                <h2>Question 3: Incorrect</h2>
+            </div>
+        </div>
+        <div id="question5">
+            <h2>5. How do you leave a comment in JavaScript?</h2>
+            <button onclick="incorrectEndGame()">&lt;--!Comment--&gt;</button><br>
+            <button onclick="correctEndGame()">// Comment</button><br>
+            <button onclick="incorrectEndGame()">(Comment)</button><br>
+            <button onclick="incorrectEndGame()">'Comment'</button><br>
+            <!-- The following will display depending on weather or not the correct answer is chosen -->
+            <div id="hiddenCorrect4" class="hidden">
+                <p>Question 4: Correct</p>
+            </div>
+            <div id="hiddenIncorrect4" class="hidden">
+                <h2>Question 4: Incorrect</h2>
+            </div>
         </div>
     </section>
 
