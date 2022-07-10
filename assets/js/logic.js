@@ -2,9 +2,11 @@ console.log(window);
 // Pertinent variables
 const startGame = document.querySelector('#start');
 const questions = document.querySelector('#questions');
+var countdown = document.querySelector('#countdown');
+var finalScore = document.querySelector('#finalScore');
+const endScreen = document.querySelector('#endScreen');
 var score = 0;
 var setInterval;
-var countdown = document.querySelector('#countdown');
 var countdownTimer;
 // Const's for each question and their answers
 const question1 = document.querySelector('#question1');
@@ -24,6 +26,8 @@ const question5 = document.querySelector('#question5');
 // Question 4 results
 const hiddenCorrect4 = document.querySelector('#hiddenCorrect4');
 const hiddenIncorrect4 = document.querySelector('#hiddenIncorrect4');
+// const correctEnd = document.querySelector('correctEndGame');
+// const incorrectEnd = document.querySelector('incorrectEndGame');
 
 function init(){
   question1.style.display="none";
@@ -31,6 +35,7 @@ function init(){
   question3.style.display="none";
   question4.style.display="none";
   question5.style.display="none";
+  endScreen.style.display="none";
 }
 
 init();
@@ -43,18 +48,20 @@ startGame.addEventListener("click", function() {
   });
 
   function countdownTimer() {
-    var timeLeft = 5;
     secondsLeft= 60;
     var timeInterval = setInterval(function () {
       secondsLeft--;
       countdown.textContent = secondsLeft;
-  
-        if(secondsLeft === 0) {
-  
-          clearInterval(timeInterval);
-          displayMessage();
-        }
-    
+      if(secondsLeft === 0) {
+
+        clearInterval(timeInterval);
+        question1.style.display="none";
+        question2.style.display="none";
+        question3.style.display="none";
+        question4.style.display="none";
+        question5.style.display="none";
+        endScreen.style.display="block";
+      }
       }, 1000);
     };
 
@@ -125,5 +132,20 @@ var displayQuestionIncorrect5 = function (){
   question5.style.display="block";
   secondsLeft = secondsLeft - 10;
 }
+
+// End game/End answer 5
+var correctEndGame = function(){
+ question5.style.display="none";
+ endScreen.style.display="block";
+ score = score + 10;
+ finalScore.textContent = score + "/50";
+}
+
+var incorrectEndGame = function(){
+  question5.style.display="none";
+  endScreen.style.display="block";
+  finalScore.textContent = score + "/50";
+ }
+
 
 
