@@ -26,8 +26,8 @@ const question5 = document.querySelector('#question5');
 // Question 4 results
 const hiddenCorrect4 = document.querySelector('#hiddenCorrect4');
 const hiddenIncorrect4 = document.querySelector('#hiddenIncorrect4');
-// const correctEnd = document.querySelector('correctEndGame');
-// const incorrectEnd = document.querySelector('incorrectEndGame');
+// Grab user initials
+var initials = document.getElementById('#initials');
 
 function init(){
   question1.style.display="none";
@@ -147,5 +147,12 @@ var incorrectEndGame = function(){
   finalScore.textContent = score + "/50";
  }
 
+ localStorage.setItem("initials", JSON.stringify(initials));
 
-
+ function renderScore() {
+  var initialsScore = JSON.parse(localStorage.getItem("initials" + finalScore));
+  if (initialsScore !== null) {
+    document.querySelector(".message").textContent = lastGrade.student + 
+    " received a/an " + lastGrade.grade
+  }
+}

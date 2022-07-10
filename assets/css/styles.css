@@ -27,7 +27,7 @@
     float: right;
 }
 
-#introduction, #endScreen{
+#introduction, #endScreen, #highscores{
     flex-wrap: wrap;
     align-items: center;
     border: 1px solid var(--main-red);
