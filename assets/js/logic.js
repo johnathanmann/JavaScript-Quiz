@@ -5,6 +5,7 @@ const questions = document.querySelector('#questions');
 var countdown = document.querySelector('#countdown');
 var finalScore = document.querySelector('#finalScore');
 const endScreen = document.querySelector('#endScreen');
+const highScores = document.querySelector('#highScores');
 var score = 0;
 var setInterval;
 var countdownTimer;
@@ -26,8 +27,6 @@ const question5 = document.querySelector('#question5');
 // Question 4 results
 const hiddenCorrect4 = document.querySelector('#hiddenCorrect4');
 const hiddenIncorrect4 = document.querySelector('#hiddenIncorrect4');
-// Grab user initials
-var initials = document.getElementById('#initials');
 
 function init(){
   question1.style.display="none";
@@ -36,6 +35,7 @@ function init(){
   question4.style.display="none";
   question5.style.display="none";
   endScreen.style.display="none";
+  highScores.style.display="none";
 }
 
 init();
@@ -147,12 +147,52 @@ var incorrectEndGame = function(){
   finalScore.textContent = score + "/50";
  }
 
- localStorage.setItem("initials", JSON.stringify(initials));
+//  End of game logic
+const submitBtn = document.querySelector("#submit");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+});
 
- function renderScore() {
-  var initialsScore = JSON.parse(localStorage.getItem("initials" + finalScore));
-  if (initialsScore !== null) {
-    document.querySelector(".message").textContent = lastGrade.student + 
-    " received a/an " + lastGrade.grade
+submitBtn.addEventListener("click", function () {
+  var initials = document.querySelector("#initials").value;
+  var userScore = (initials + ": " + score);
+  console.log(userScore);
+  localStorage.setItem('userScore', JSON.stringify(userScore));
+  // var userScore = localStorage.getItem(userScore);
+  endScreen.style.display="none";
+  addHighScore();
+  highScores.style.display="block";
+
+  function addHighScore (){
+    var ol = document.getElementById("list");
+    var li = document.createElement("li");
+    txtNode = document.createTextNode(localStorage.getItem('userScore', JSON.stringify(userScore)));
+    li.appendChild(txtNode);
+    ol.appendChild(li);
   }
+  
+});
+
+// High score board
+
+function highScoreBoard(){
+  document.getElementById('introduction').style.display="none";
+  question1.style.display="none";
+  question2.style.display="none";
+  question3.style.display="none";
+  question4.style.display="none";
+  question5.style.display="none";
+  endScreen.style.display="none";
+  highScores.style.display="block";
+}
+
+function back(){
+  document.getElementById('introduction').style.display="block";
+  question1.style.display="none";
+  question2.style.display="none";
+  question3.style.display="none";
+  question4.style.display="none";
+  question5.style.display="none";
+  endScreen.style.display="none";
+  highScores.style.display="none";
 }

@@ -13,10 +13,9 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
 </head>
 <body>
-    <div class="container">
         <!-- Display time and link to scores.html -->
     <div id="top-page">
-    <a href="./scores.html" target="_blank">High Scores</a><p>Time: <span id="countdown"></span></p>
+    <a onclick="highScoreBoard()">High Scores</a><p>Time: <span id="countdown"></span></p>
     </div>
     <section>
         <!-- Introduction to the quiz -->
@@ -99,13 +98,21 @@
         <div id="endScreen">
             <header><h1>All Done!</h1></header>
             <p>Your final score is: <span id="finalScore"></span></p>
-            <form>
+            <form id="form">
                 <label for="initials">Initials</label>
                 <input type="text" id="initials" name="initials" placeholder="JM"><br>
+                <input id="submit" type="submit" value="Submit" />
             </form>
         </div>
-
     </section>
+    <section>
+        <div id="highScores">
+            <header><h1>High Scores</h1></header>
+            <ol id="list"></ol>
+            <button onclick="back()">Go Back</button>
+        </div>
+    </section>
+    
 
     </div>
     <script src="./assets/js/logic.js"></script>

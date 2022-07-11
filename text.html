@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript: add LI to UL</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <input type="text" id="txtVal">
+        <button onclick="addLi()">Add</button>
+        
+        <ul id="list">
+            <li>1</li>
+            <li>22</li>
+            <li>50</li>
+        </ul>
+        
+        <script>
+            
+            function addLi()
+            {
+
+                var txtVal = document.getElementById('txtVal').value,
+                    listNode = document.getElementById('list'),
+                    liNode = document.createElement("LI"),
+                    txtNode = document.createTextNode(txtVal);
+            
+                 liNode.appendChild(txtNode);
+                 listNode.appendChild(liNode);
+            
+            }
+            
+        </script>
+       
+    </body>
+</html>

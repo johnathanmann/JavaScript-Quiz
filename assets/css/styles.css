@@ -27,7 +27,7 @@
     float: right;
 }
 
-#introduction, #endScreen, #highscores{
+#introduction, #endScreen, #highScores {
     flex-wrap: wrap;
     align-items: center;
     border: 1px solid var(--main-red);
@@ -65,4 +65,8 @@ button{
     top: 50%;
     transform: translate(-50%, -50%); 
     font-weight: bold;
+}
+
+#highScores{
+    padding: 40px;
 }
