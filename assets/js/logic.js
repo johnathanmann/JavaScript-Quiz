@@ -167,15 +167,15 @@ form.addEventListener("submit", function (e) {
 });
 
 submitBtn.addEventListener("click", function () {
+  // This handles the submission of the initials and their score
   clearInterval(timeInterval);
   var initials = document.querySelector("#initials").value;
   var userScore = (initials + ": " + score);
-  console.log(userScore);
   localStorage.setItem('userScore', JSON.stringify(userScore));
   endScreen.style.display="none";
   addHighScore();
   highScores.style.display="block";
-
+// This handles the addition of the score to the score list
   function addHighScore (){
     var ol = document.getElementById("list");
     var li = document.createElement("li");
@@ -201,6 +201,7 @@ function highScoreBoard(){
   highScores.style.display="block";
 }
 
+// Back button from high scores to introduction
 function back(){
   document.getElementById('introduction').style.display="block";
   question1.style.display="none";
@@ -217,7 +218,7 @@ var saved = localStorage.getItem('list');
   if (saved) {
     list.innerHTML = saved;
   }
-
+// Clears localStorage data on click
 function clearData(){
   window.localStorage.clear();
 }
