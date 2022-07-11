@@ -9,6 +9,7 @@ const highScores = document.querySelector('#highScores');
 var score = 0;
 var setInterval;
 var countdownTimer;
+var timeInterval;
 // Const's for each question and their answers
 const question1 = document.querySelector('#question1');
 const question2 = document.querySelector('#question2');
@@ -49,7 +50,7 @@ startGame.addEventListener("click", function() {
 
   function countdownTimer() {
     secondsLeft= 60;
-    var timeInterval = setInterval(function () {
+    timeInterval = setInterval(function () {
       secondsLeft--;
       countdown.textContent = secondsLeft;
       if(secondsLeft === 0) {
@@ -65,6 +66,7 @@ startGame.addEventListener("click", function() {
       }, 1000);
     };
 
+
   // Display question 2
 var displayQuestionCorrect2 = function (){
   hiddenCorrect1.classList.remove('hidden');
@@ -72,6 +74,7 @@ var displayQuestionCorrect2 = function (){
   question1.style.display="none";
   question2.style.display="block";
   score = score + 10;
+  finalScore.textContent = score + "/50";
 }
 
 var displayQuestionIncorrect2 = function (){
@@ -80,6 +83,7 @@ var displayQuestionIncorrect2 = function (){
   question1.style.display="none";
   question2.style.display="block";
   secondsLeft = secondsLeft - 10;
+  finalScore.textContent = score + "/50";
 }
 
 // Display question 3
@@ -89,6 +93,7 @@ var displayQuestionCorrect3 = function (){
   question2.style.display="none";
   question3.style.display="block";
   score = score + 10;
+  finalScore.textContent = score + "/50";
 }
 
 var displayQuestionIncorrect3 = function (){
@@ -97,6 +102,7 @@ var displayQuestionIncorrect3 = function (){
   question2.style.display="none";
   question3.style.display="block";
   secondsLeft = secondsLeft - 10;
+  finalScore.textContent = score + "/50";
 }
 
 // Display question 4
@@ -106,6 +112,7 @@ var displayQuestionCorrect4 = function (){
   question3.style.display="none";
   question4.style.display="block";
   score = score + 10;
+  finalScore.textContent = score + "/50";
 }
 
 var displayQuestionIncorrect4 = function (){
@@ -114,6 +121,7 @@ var displayQuestionIncorrect4 = function (){
   question3.style.display="none";
   question4.style.display="block";
   secondsLeft = secondsLeft - 10;
+  finalScore.textContent = score + "/50";
 }
 
 // Display question 5
@@ -123,6 +131,7 @@ var displayQuestionCorrect5 = function (){
   question4.style.display="none";
   question5.style.display="block";
   score = score + 10;
+  finalScore.textContent = score + "/50";
 }
 
 var displayQuestionIncorrect5 = function (){
@@ -131,6 +140,7 @@ var displayQuestionIncorrect5 = function (){
   question4.style.display="none";
   question5.style.display="block";
   secondsLeft = secondsLeft - 10;
+  finalScore.textContent = score + "/50";
 }
 
 // End game/End answer 5
@@ -139,26 +149,29 @@ var correctEndGame = function(){
  endScreen.style.display="block";
  score = score + 10;
  finalScore.textContent = score + "/50";
+ clearInterval(timeInterval);
 }
 
 var incorrectEndGame = function(){
   question5.style.display="none";
   endScreen.style.display="block";
   finalScore.textContent = score + "/50";
+  clearInterval(timeInterval);
  }
 
 //  End of game logic
+var list = document.getElementById('list')
 const submitBtn = document.querySelector("#submit");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 });
 
 submitBtn.addEventListener("click", function () {
+  clearInterval(timeInterval);
   var initials = document.querySelector("#initials").value;
   var userScore = (initials + ": " + score);
   console.log(userScore);
   localStorage.setItem('userScore', JSON.stringify(userScore));
-  // var userScore = localStorage.getItem(userScore);
   endScreen.style.display="none";
   addHighScore();
   highScores.style.display="block";
@@ -169,14 +182,16 @@ submitBtn.addEventListener("click", function () {
     txtNode = document.createTextNode(localStorage.getItem('userScore', JSON.stringify(userScore)));
     li.appendChild(txtNode);
     ol.appendChild(li);
+    localStorage.setItem('list', list.innerHTML);
   }
-  
+
 });
 
 // High score board
 
 function highScoreBoard(){
   document.getElementById('introduction').style.display="none";
+  clearInterval(timeInterval);
   question1.style.display="none";
   question2.style.display="none";
   question3.style.display="none";
@@ -195,4 +210,14 @@ function back(){
   question5.style.display="none";
   endScreen.style.display="none";
   highScores.style.display="none";
+}
+
+// Display saved scores to scoreboard 
+var saved = localStorage.getItem('list');
+  if (saved) {
+    list.innerHTML = saved;
+  }
+
+function clearData(){
+  window.localStorage.clear();
 }
